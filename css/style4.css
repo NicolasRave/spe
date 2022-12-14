@@ -1,0 +1,37 @@
+.container {
+    position: relative;
+    font-family: Arial;
+    }
+
+    .text-block {
+    position: absolute;
+    bottom: 25%;
+    right: 5%;
+    background-color: black;
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    }
+
+    img {
+    cursor: pointer;
+    width: 50%;
+    }
+
+    .nl{
+    text-align: center;    
+    }
+
+    .instr{
+    border-color: blue;
+    border-style:groove;
+    border-width: 5px;
+    text-align: center;  
+    font-family: cursive;
+    background-color: rgb(146, 209, 229);
+    }
+
+    .b{
+    color:red;   
+    text-align: center;  
+    }

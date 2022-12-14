@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bienvenue</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body,
+            #or {
+                
+                color: rgb(198, 226, 216);
+                font-size: 1.875em;
+            }
+
+            body,
+            html {
+                height: 100%
+            }
+
+            .bgimg {
+                background-image: url('./img/Forest.jpg');
+                min-height: 100%;
+                background-position: center;
+                background-size: cover;
+                position: relative;
+                text-align:center;
+            }
+           
+        </style>
+    </head>
+<body class="bgimg" >
+    
+    <div >
+        <div>
+            
+            <h3 id="demo" float:bottom;></h3>
+            <script>
+            const weekday = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+
+            const d = new Date();
+            let day = weekday[d.getUTCDay()];
+            document.getElementById("demo").innerHTML = day;
+            </script>
+           
+        </div>
+
+
+        <div>
+            <h1 ><a href="ici.html" id="or">Bienvenue</a></h1>
+            
+           
+        </div>
+
+        
+    </div>
+    
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Spaceports times</title>
+    <meta charset="UTF-8"> 
+    <link rel="stylesheet" href="css/style4.css">
+    <script defer src="js/main.js"></script>
+    
+</head>
+
+<body>
+    
+    <span class="nl">
+    <h1>Le temps local est: </h1>
+    <h1 id="nowlocal"></h1>
+    </span>
+    <h1 class="b">Mais:</h1>
+    <h1 class="instr"> Pour connaître les temps locaux des stations de lancement suivantes,
+        <br> cliquez sur les images correspondantes:</h1>
+   
+<!-- Vandenberg, Cap Canaveral, Esrange, Kourou, Baïkonour,
+Tanegashima.
+
+Vandenberg is at PST;
+Pacific Standard Time = UTC-8 from the first Sunday in November to the second Sunday (excluded) in March
+and PST = UTC-7 the rest of the time ;
+Cap Canaveral is at PST+3;
+Esrange is at CET;
+"Central European Time" = UTC+1 from the last Sunday of October to the last Sunday (excluded)of March
+and CET = UTC+2 the rest of the time ;
+Kourou is at CET-4;
+
+-->
+
+        
+        <div class="container">
+        <img src="./img/Vandenberg.jpg" alt="Vandenberg" onclick="myFunction1()">
+        <div class="text-block">
+        <h2 id="demo1">Vandenberg</h2>
+        </div>
+        </div>
+    
+        <div class="container">
+        <img src="./img/CapCanaveral.jpg" alt="CapCanaveral" onclick="myFunction2()">
+        <div class="text-block">
+        <h2 id="demo2">CapCanaveral</h2>
+        </div>
+        </div>
+    
+        <div class="container">
+        <img src="./img/Esrange.jpg" alt="Esrange" onclick="myFunction3()">
+        <div class="text-block">
+        <h2 id="demo3">Esrange</h2>
+        </div>
+        </div>
+    
+        <div class="container">
+        <img src="./img/Kourou.jpg" alt="Kourou" onclick="myFunction4()">
+        <div class="text-block">
+        <h2 id="demo4">Kourou</h2>
+        </div>
+        </div>
+
+        <div class="container">
+        <img src="./img/Baïkonour.jpg" alt="Baïkonour" onclick="myFunction5()">
+        <div class="text-block">
+        <h2 id="demo5">Baïkonour</h2>
+        </div>
+        </div>
+    
+        <div class="container">
+            <img src="./img/vostochny.jpg" alt="Vostochny" onclick="myFunction6()">
+            <div class="text-block">
+            <h2 id="demo6">Vostochny</h2>
+            </div>
+            </div>
+
+        <div class="container">
+        <img src="./img/Tanegashima.jpg" alt="Tanegashima" onclick="myFunction7()">
+        <div class="text-block">
+        <h2 id="demo7">Tanegashima</h2>
+        </div>
+        </div>
+
+        <div class="container">
+        <img src="./img/Satish_Dhawan.jpg" alt="Satish_Dhawan Space Center" onclick="myFunction8()">
+        <div class="text-block">
+        <h2 id="demo8">Srīharikota</h2>
+        </div>
+        </div>
+
+        <h4>Temps donnés selon les pratiques en cours en 2022</h4>
+
+        <script>
+        
+            // This part of the script determines the first sunday of november
+            // and the second sunday of march
+    
+            //function allowing to add time in msec to a time
+            Date.prototype.addMillisecs = function(d) {
+                            this.setTime(this.getTime() + (d));
+                            return this;
+                        };
+            
+            var dpst1 = new Date();
+            
+            var y1=dpst1.getFullYear();
+            //is the year of the local time
+            
+            dpst1.setFullYear(y1,10,1);
+            //sets a date to the year of the local time 
+            //and the first of november;
+            //will be used to find the first sunday of november           
+    
+            var i1=dpst1.getDay();
+            //is the position in the week of
+            //the first of november of the year of the local time 
+    
+            while (i1>0){
+                dpst1.addMillisecs(24*60*60*1000);
+                i1=dpst1.getDay();
+                //if i1 changed, is the position in the week of
+                //the next day of the year of the local time 
+                };
+    
+            var d_aux1=dpst1.getDate();
+            //is the day of november month of the first sunday of november
+            
+            var dpst2 = new Date();
+            
+            dpst2.setFullYear(y1,2,7);
+            //sets a date to the year of the local time 
+            //and the seventh of march;
+            //will be used to find the second sunday of march 
+    
+            var i2=dpst2.getDay();
+            //is the position in the week of
+            //the seventh of march of the year of the local time
+    
+            while (i2>0) 
+                {dpst2.addMillisecs(24*60*60*1000);
+                i2=dpst2.getDay();
+                //if i2 changed, is the position in the week of
+                //the next day of the year of the local time 
+                }; 
+    
+            var d_aux2=dpst2.getDate();
+            //is the day of march month of the second sunday of march
+    
+    
+            // This part of the script determines the last sunday of october
+            // and the last sunday of march
+            
+            var dcet1 = new Date();
+            dcet1.setFullYear(y1,9,31);
+            //sets a date to the year of the local time 
+            //and the thirty-first of october;
+            //will be used to find the last sunday of october
+    
+            var i3=dcet1.getDay();
+            //is the position in the week of
+            //the thirty-first of october of the year of the local time
+    
+            while (i3>0) 
+                {dcet1=.addMillisecs(-24*60*60*1000);
+                i3=dcet1.getDay();
+                //if i3 changed, is the position in the week of
+                //the next day of the year of the local time 
+                } 
+    
+            var d_aux3=dcet1.getDate();
+            //is the day of october month of the last sunday of october
+    
+    
+            var dcet2 = new Date();
+            dcet2.setFullYear(y1,2,31);
+            //sets a date to the year of the local time 
+            //and the thirty-first of march;
+            //will be used to find the last sunday of march
+    
+            var i4=dcet2.getDay();
+            //is the position in the week of
+            //the thirty-first of march of the year of the local time
+    
+            while (i4>0) 
+                {dcet2.addMillisecs(-24*60*60*1000);
+                i4=dcet2.getDay();
+                //if i4 changed, is the position in the week of
+                //the next day of the year of the local time 
+                } 
+            var d_aux4=dcet2.getDate();
+            //is the day of March month of the last sunday of march
+    
+            
+            
+        </script>
+    
+
+</body>
+
+</html>

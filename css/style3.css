@@ -1,0 +1,68 @@
+body,
+html {
+    height: 100%;
+    font-weight:bold;
+}
+
+.bgimg{background-image: url('../img/Capacitors.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+.rel{
+    position: absolute;
+    top: 10px;
+    left: 2%;
+}
+
+.relret{
+    position: absolute;
+    top: 10px;
+    right: 4%;
+}
+
+.relac{
+    position: absolute;        
+    top: 70px;
+    left: 2%;
+
+}
+
+.relsup{
+    position: absolute;
+    bottom: 15%;
+    left:  2%;
+}
+
+.relsuplist{
+    color:black;
+    background:rgb(0, 230, 0,0.5);
+    position: absolute;
+    bottom: 5%;
+    left:  2%;
+}
+
+
+#tex{
+    background:rgb(0, 230, 0,0.5);
+    font-weight:bold;
+   
+}
+
+#hours{
+    color:blueviolet;
+    font-weight:bold;
+    background:rgb(0, 230, 0,0.5);
+    border-style: groove;
+    border-color:blue;
+    position: absolute;
+    bottom: 25%;
+    right:  2%;
+}
+
+#home{
+    position: absolute;
+    top: 3%;
+    right: 2%;
+}
+

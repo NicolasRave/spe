@@ -1,0 +1,16 @@
+body
+{ background:#fa9f27;
+}
+
+.p1 {
+font-family: "Lucida Console", "Courier New", monospace;
+}
+
+#answ{background:#fa2727
+}
+
+.relret{
+position: absolute;
+top: 10px;
+right: 10px;
+}
